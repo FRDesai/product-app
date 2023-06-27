@@ -61,16 +61,12 @@ const login = asyncHandler(async (req, res) => {
 
 });
 
-// const getUsers =async (req, res)=>{
-//     const users = await User.find();
-//     res.send(users);
-// };
-
 
 const getProducts = asyncHandler( async(req, res)=>{
     const products = await Product.find({user_id: req.user.id});
     res.send(products);
 });
+
 
 const addProducts = asyncHandler( async(req, res)=>{
     const { name, description, amount } = req.body;

@@ -14,12 +14,14 @@ passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
       if (user) {
         // console.log(user);
         return done(null, user);   
-      } else {
+      } 
+      else {
         console.log("No user found")
         return done(null, false);
       }
-    } catch (err) {
+    } 
+    catch (err) {
       return done(err, false);
     }
   }
-  ));
+));
