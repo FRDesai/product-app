@@ -84,5 +84,10 @@ const addProducts = asyncHandler( async(req, res)=>{
     res.send("Product added successfully")
 });
 
-module.exports = {register, login, getProducts, addProducts};
+const deleteProducts = asyncHandler( async(req, res)=>{
+    const id = req.params.id;
+    await Product.deleteOne({_id:id});
+    res.send("Product deleted successfully");
+});
+module.exports = {register, login, getProducts, addProducts, deleteProducts};
 
